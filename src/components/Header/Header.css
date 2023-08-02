@@ -1,0 +1,27 @@
+.header {
+    height: 48px;
+    background-color: #e44d3a;
+}
+
+.header__content {
+    height: 48px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    line-height: 0;
+    gap: 20px;
+}
+
+.header__user {
+    color: #fff;
+    font-size: 16px;
+}
+
+.header__button {
+    background-color: #ffffff;
+    color: #e44d3a;
+    cursor: pointer;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 12px;
+}

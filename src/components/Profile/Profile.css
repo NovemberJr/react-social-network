@@ -1,0 +1,52 @@
+.profile {
+    display: flex;
+    gap: 20px;
+}
+
+.profile__pic {
+    height: 300px;
+    width: 300px;
+}
+
+.profile__upload {
+    width: 125px;
+    margin: 10px 0 0;
+}
+
+.profile__name {
+    margin: 10px 0 0;
+}
+
+.profile__about {
+    margin: 20px 0 0;
+}
+
+.profile__contacts {
+    margin: 20px;
+    padding: 0 10px 0 0;
+}
+
+.profile__contact {
+    padding: 5px;
+}
+
+.profile__posts {
+
+}
+
+.profile__new-post {
+    display: flex;
+    gap: 15px;
+}
+
+.profile__input {
+    outline: none;
+    border: 1px solid #e6e6e6;
+    padding: 0 15px;
+    height: 45px;
+    width: 80%;
+}
+
+.profile__send {
+    width: 125px;
+}

@@ -1,0 +1,23 @@
+.paginator {
+    display: flex;
+    gap: 10px;
+}
+
+.paginator__page-link {
+    padding: 0 3px;
+    cursor: pointer;
+}
+.paginator__page-link:hover,
+.paginator__page-link.active {
+    background-color: #e44d3a;
+    color: #ffffff;
+}
+
+.paginator__button {
+    background-color: #e44d3a;
+    color: #ffffff;
+    cursor: pointer;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 12px;
+}

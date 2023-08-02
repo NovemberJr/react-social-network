@@ -1,38 +1,79 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  margin: 0 auto;
+  background-color: #f2f2f2;
   min-height: 100vh;
+
+  /*display: grid;
+  grid-template-areas:
+  'head head'
+  'side main'
+  ;
+  grid-template-columns: 164px 1fr;*/
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 1000px;
+}
+
+.body-grid {
+  display: flex;
+  gap: 15px;
+}
+
+.nav {
+  margin-top: 12px;
+  width: 164px;
+}
+
+.nav__link {
+  text-decoration: none;
+  width: 122px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  font-size: 15px;
+}
+.nav__link:visited {
+  color: #000000;
+}
+.nav__link:hover {
+  background-color: rgba(174, 183, 194, 0.12);
+}
+
+.main {
+  flex-grow: 1;
+}
+
+.block {
+  background: #ffffff;
+  box-shadow: 0 0 0 1px #dce1e6;
+  border-radius: 12px;
+  margin-top: 15px;
+  padding: 20px;
+}
+
+.button {
+  border: none;
+  color: white;
+  background-color: #e44d3a;
+  font-size: 16px;
+  height: 45px;
+  cursor: pointer;
+}
+
+.login__input {
+  outline: none;
+  border: 1px solid #e6e6e6;
+  padding: 0 15px;
+  height: 40px;
+  width: 25%;
+}
+
+.login__form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  gap: 10px;
 }

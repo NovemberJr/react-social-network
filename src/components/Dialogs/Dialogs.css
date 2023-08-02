@@ -1,0 +1,90 @@
+.dialogs {
+    display: flex;
+    padding: 0;
+    height: 726px;
+}
+
+.dialogs__left {
+    width: 320px;
+    border-right: 1px solid #e4e4e4;
+}
+
+.dialogs__right {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.dialogs__title {
+    margin: 0;
+    padding: 36px 20px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.dialogs__list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dialogs__item {
+    display: block;
+    padding: 20px;
+    border-bottom: 1px solid #eeeeee;
+    cursor: pointer;
+}
+
+.dialogs__item.active {
+    background-color: #efefef;
+}
+
+.dialogs__messages {
+    padding: 15px 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 15px;
+    overflow-y: auto;
+}
+
+.dialogs__message {
+    margin: 0;
+    max-width: 55%;
+    font-size: 14px;
+    line-height: 22px;
+    padding: 8px 15px 8px 15px;
+    color: #fff;
+    border-radius: 15px;
+}
+
+.dialogs__message > p {
+    margin: 0;
+}
+
+.dialogs__time {
+    font-size: 12px;
+    float: right;
+}
+
+.dialogs__message.red {
+    background-color: #e44d3a;
+    align-self: flex-end;
+}
+.dialogs__message.white {
+    background-color: #efefef;
+    color: #686868;
+    width: auto;
+    /*padding: 10px 15px;*/
+    align-self: flex-start;
+}
+
+.dialogs__send {
+    display: flex;
+    padding: 20px 20px;
+    border-top: 1px solid #eeeeee;
+    background-color: #f3f5f7;
+    gap: 10px;
+}
+.dialogs__send > input {
+    flex-grow: 1;
+}
