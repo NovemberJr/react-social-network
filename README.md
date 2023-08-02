@@ -1,5 +1,5 @@
 ## Login data
-login: free@samuraijs.com
+login: free@samuraijs.com.\
 pass: free
 
 # Getting Started with Create React App
