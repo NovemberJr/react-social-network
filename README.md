@@ -1,3 +1,7 @@
+## Login data
+login: free@samuraijs.com\
+pass: free
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
