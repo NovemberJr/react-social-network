@@ -30,13 +30,17 @@
     padding: 5px;
 }
 
-.profile__posts {
+/*.profile__posts {
 
-}
+}*/
 
 .profile__new-post {
     display: flex;
     gap: 15px;
+}
+
+.profile__status {
+    min-height: 1em;
 }
 
 .profile__input {

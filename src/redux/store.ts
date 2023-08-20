@@ -7,7 +7,7 @@ import dialogsReducer from './dialogsReducer';
 import profileReducer from './profileReducer';
 import usersReducer from './usersReducer';
 
-const reducers = combineReducers({
+const rootReducer = combineReducers({
     app: appReducer,
     auth: authReducer,
     dialogs: dialogsReducer,
@@ -16,6 +16,9 @@ const reducers = combineReducers({
     form: formReducer
 })
 
-const store = createStore(reducers, applyMiddleware(thunkMiddleware));
+const store = createStore(rootReducer, applyMiddleware(thunkMiddleware));
 
 export default store
+
+export type RootState = ReturnType<typeof rootReducer>
+export type InferActionsTypes<T> = T extends { [key: string]: (...args: any) => infer U } ? U : never

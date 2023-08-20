@@ -1,7 +1,14 @@
 import React, { useState } from 'react';
 import './Paginator.css';
 
-const Paginator = ({ totalPages, currentPage = 1, pagesGroupSize = 5, pageCallback }) => {
+type PropsType = {
+    totalPages: number,
+    currentPageNumber: number,
+    pagesGroupSize: number,
+    pageCallback: (arg0: any) => void
+}
+
+const Paginator: React.FC<PropsType> = ({ totalPages, currentPageNumber = 1, pagesGroupSize = 5, pageCallback }: PropsType) => {
     const pagesToDisplay = [];
     const totalGroups = Math.ceil(totalPages / pagesGroupSize);
 
@@ -22,7 +29,7 @@ const Paginator = ({ totalPages, currentPage = 1, pagesGroupSize = 5, pageCallba
         setCurrentGroup(currentGroup + 1)
     }
 
-    const pageClick = (e) => {
+    const pageClick = (e: any) => {
         pageCallback(+e.target.innerHTML)
     }
 
@@ -31,7 +38,7 @@ const Paginator = ({ totalPages, currentPage = 1, pagesGroupSize = 5, pageCallba
             {currentGroup > 0 && <button className='paginator__button' onClick={prevClick}>Prev</button>}
         </div>
         <div>
-            {pagesToDisplay.map(page => <span className={'paginator__page-link ' + (page === currentPage ? 'active' : '')} key={`goto${page}`} onClick={pageClick}>{page}</span>)}
+            {pagesToDisplay.map(page => <span className={'paginator__page-link ' + (page === currentPageNumber ? 'active' : '')} key={`goto${page}`} onClick={pageClick}>{page}</span>)}
         </div>
         <div>
             {currentGroup < totalGroups && <button className='paginator__button' onClick={nextClick}>Next</button>}

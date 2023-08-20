@@ -1,21 +1,13 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { compose } from 'redux';
-import authRedirect from '../../hoc/withAuth';
+import DialogItem from './DialogItem';
 import { useState } from 'react';
-import { addMessage } from '../../redux/dialogsReducer';
 import './Dialogs.css';
+import { DialogData, MessageData } from '../../typescript/types';
 
-const mstp = (state) => ({
-    dialogs: state.dialogs.dialogs,
-    messages: state.dialogs.messages
-})
-
-const Dialogs = ({ dialogs, messages, addMessage }) => {
+const Dialogs = ({ dialogs, messages, addMessage }: StateProps & DispatchProps) => {
     let [newMessage, setNewMessage] = useState('');
     let [dialogSelected, setDialogSelected] = useState(1);
 
-    const onNewMessageChange = (e) => {
+    const onNewMessageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setNewMessage(e.target.value)
     }
 
@@ -25,20 +17,11 @@ const Dialogs = ({ dialogs, messages, addMessage }) => {
         }
     }
 
-    const onDialogClick = (e) => {
-        setDialogSelected(+e.target.getAttribute('dialog'))
-    }
-
     return <div className='block dialogs'>
         <div className='dialogs__left'>
             <h3 className='dialogs__title'>Dialogs</h3>
             <ul className='dialogs__list'>
-                {dialogs.map(el => (<li
-                    className={'dialogs__item ' + (el.id === dialogSelected ? 'active' : '')}
-                    key={el.id}
-                    dialog={el.id}
-                    onClick={onDialogClick}
-                >{el.name}</li>))}
+                {dialogs.map(el => (<DialogItem key={el.id} dialogId={el.id} username={el.name} clickCB={setDialogSelected} className={'dialogs__item ' + (el.id === dialogSelected ? 'active' : '')} />))}
             </ul>
         </div>
         <div className='dialogs__right'>
@@ -56,7 +39,13 @@ const Dialogs = ({ dialogs, messages, addMessage }) => {
     </div>
 }
 
-export default compose(
-    connect(mstp, { addMessage }),
-    authRedirect
-)(Dialogs)
+export default Dialogs
+
+export type StateProps = {
+    dialogs: Array<DialogData>
+    messages: Array<MessageData>
+}
+
+export type DispatchProps = {
+    addMessage: (text: string) => void
+}

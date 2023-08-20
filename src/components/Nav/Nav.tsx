@@ -1,6 +1,4 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
-//import { Navigate, Router } from 'react-router-dom';
 
 const Nav = () => {
     return <nav className='nav'>
